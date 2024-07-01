@@ -4,11 +4,11 @@ Download and execute a keylogger executable to run on the target machine that lo
 Two versions of the executable have been created, ```usersystem32.exe``` and ```svcusersystem32.exe```.
 Whilst developing the ```usersystem32.exe``` executable, Windows Defender eventually picked up on it and it got flagged as a PUP/virus. 
 
-```svcusersystem32.exe``` is the successor which includes some random mathematical functions to try and throw off the detection. If you would like to test them out for yourself, you might need to disable **Reak-time protection** in your Windows settings (Windows Security > Virus & threat protection settings > Real-time protection). 
+```svcusersystem32.exe``` is the successor which includes some random mathematical functions to try and throw off the detection. If you would like to test them out for yourself, you might need to disable **Real-time protection** in your Windows settings (Windows Security > Virus & threat protection settings > Real-time protection). 
 
 Don't forget to re-enable this setting once you have tested and played around with the keylogger yourself.
 
-The ```service.ps1``` script will manage the download of the keylogger, sending of data to the webhook and kill switch settings. If a killswitch is set, the following actions are done:
+The ```service.ps1``` script will manage the download of the keylogger, sending of data to the webhook and the killswitch. If a killswitch is set, the following actions are done:
 1. Keylogger executable process is stopped
 2. The folder created in the temp directory where the keylogger executable and text file that it writes to is deleted
 3. Run history is cleared
